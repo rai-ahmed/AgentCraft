@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgentCraft Lab — Privacy Policy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090d16;
+      --card-bg: #111827;
+      --border: #1f293d;
+      --primary: #00d2ff;
+      --accent: #00f090;
+      --text: #f0f3f6;
+      --text-muted: #8b949e;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: 'Plus Jakarta Sans', -apple-system, sans-serif;
+      line-height: 1.7;
+    }
+    header {
+      border-bottom: 1px solid var(--border);
+      padding: 18px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(9, 13, 22, 0.8);
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: inherit;
+    }
+    .brand-logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      color: #000;
+      font-size: 18px;
+    }
+    .brand-name { font-weight: 700; font-size: 18px; }
+    nav a { color: var(--text-muted); text-decoration: none; margin-left: 20px; font-size: 14px; }
+    nav a:hover { color: var(--primary); }
+    .container {
+      max-width: 840px;
+      margin: 50px auto 80px;
+      padding: 40px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+    }
+    h1 { font-size: 32px; font-weight: 800; margin-bottom: 8px; color: #fff; }
+    .updated { color: var(--accent); font-family: 'JetBrains Mono', monospace; font-size: 13px; margin-bottom: 30px; }
+    h2 { font-size: 20px; font-weight: 700; margin-top: 32px; margin-bottom: 12px; color: var(--primary); }
+    p { margin-bottom: 16px; color: #d1d5db; font-size: 15px; }
+    ul { margin-left: 24px; margin-bottom: 16px; color: #d1d5db; font-size: 15px; }
+    li { margin-bottom: 8px; }
+    code { background: #1a2234; padding: 2px 6px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; color: var(--primary); font-size: 13px; }
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 30px;
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="/" class="brand">
+      <div class="brand-logo">⚡</div>
+      <div class="brand-name">AgentCraft Lab</div>
+    </a>
+    <nav>
+      <a href="/">Home</a>
+      <a href="/privacy.html" style="color:var(--primary);">Privacy Policy</a>
+      <a href="/terms.html">Terms of Service</a>
+      <a href="mailto:lagentcraft@gmail.com">Contact</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h1>Privacy Policy</h1>
+    <div class="updated">Effective Date: November 21, 2026 | App ID: 7706640776638089237</div>
+
+    <p>AgentCraft Lab ("we", "our", or "us") provides software automation tools for media publishing and analytics management. This Privacy Policy outlines our data handling practices when integrating with third-party platform APIs, specifically TikTok for Developers (Login Kit and Content Posting API v2).</p>
+
+    <h2>1. Information We Collect</h2>
+    <p>When you authorize AgentCraft Lab to interact with your TikTok account, we access only the minimal scopes necessary for intended functionality:</p>
+    <ul>
+      <li><strong>Creator Identity (Login Kit):</strong> Username, avatar URL, and OpenID via <code>user.info.basic</code> strictly to confirm identity matches the designated authorized creator account (<code>@agentcraftlab01</code>).</li>
+      <li><strong>OAuth Access Credentials:</strong> Short-lived access tokens and refresh tokens required to dispatch authorized video publishing requests.</li>
+      <li><strong>Media Publishing Data:</strong> Video file metadata (checksum, dimensions, duration) and post parameters (captions, tags, AI disclosure metadata).</li>
+    </ul>
+
+    <h2>2. How We Store and Protect Your Data</h2>
+    <ul>
+      <li><strong>Local AES-256 Vault:</strong> All OAuth tokens and secrets are stored locally within an encrypted SQLite database using authenticated Fernet AES-256 encryption.</li>
+      <li><strong>Zero External Data Sharing:</strong> We do not sell, rent, monetize, or transmit your credentials, profile information, or videos to third-party data brokers, analytics providers, or advertising networks.</li>
+      <li><strong>Principle of Least Privilege:</strong> Scopes are requested solely for video publishing and creator identity verification. No administrative or unnecessary permissions are requested.</li>
+    </ul>
+
+    <h2>3. Compliance with TikTok Developer Policies</h2>
+    <p>Our application adheres strictly to TikTok's Developer Guidelines, including:</p>
+    <ul>
+      <li>Passing mandatory synthetic and AI-generated media disclosures (<code>is_ai_generated: true</code>) on all automated uploads.</li>
+      <li>Enforcing rate limit compliance and exponential backoff to protect TikTok API infrastructure.</li>
+    </ul>
+
+    <h2>4. Data Retention and Deletion</h2>
+    <p>Users may revoke authorization at any time by navigating to their TikTok security settings or by clicking "Disconnect Account" within the AgentCraft Lab dashboard. Disconnecting instantly purges all stored tokens, credentials, and cached profile data from local storage.</p>
+
+    <h2>5. Contact & Inquiries</h2>
+    <p>For questions or privacy concerns regarding this application, please contact the developer directly at: <code>lagentcraft@gmail.com</code>.</p>
+  </div>
+
+  <footer>
+    <p>© 2026 AgentCraft Lab. App ID #7706640776638089237. All rights reserved.</p>
+  </footer>
+</body>
+</html>
